@@ -1,0 +1,46 @@
+﻿@model IEnumerable<string>
+@{
+    var i = 0;
+}
+@foreach (var item in Model)
+{
+    <div>
+        @Html.TextBoxFor(m => item, new { Name = $"PhoneNumbers[{i++}]" })
+        <input type="button" value="Remove" onclick="RemoveTextBox(this)" />
+    </div>
+
+}
+
+<div id="TextBoxContainer">
+    <!--Textboxes will be added here -->
+</div>
+<input id="btnAdd" type="button" value="Add" onclick="AddTextBox()" />
+
+<script src="/Scripts/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+var count = $("[name^=PhoneNumbers]").length;
+function GetDynamicTextBox(value) {
+var div = $("<div />");
+
+var textBox = $("<input />").attr("type", "textbox").attr("name", "PhoneNumbers[" + value + "]");
+div.append(textBox);
+
+var button = $("<input />").attr("type", "button").attr("value", "Remove");
+button.attr("onclick", "RemoveTextBox(this)");
+div.append(button);
+
+return div;
+}
+function AddTextBox() {
+var div = GetDynamicTextBox(count);
+count++;
+$("#TextBoxContainer").append(div);
+}
+
+function RemoveTextBox(button) {
+var inputName = $(button).siblings("[name^=PhoneNumbers]").attr("name");
+$(button).parent().remove();
+count--;
+$("[name^='PhoneNumbers[" + count + "]']").attr("name", inputName);
+}
+</script>
