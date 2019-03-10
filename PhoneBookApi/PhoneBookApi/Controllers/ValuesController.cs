@@ -21,13 +21,19 @@ namespace PhoneBookApi.Controllers
             return "value";
         }
 
-        // POST api/values
-        public string Post([FromBody]CheckReturnValue value)
+
+        //// POST api/values
+        //public string Post([FromBody]CheckReturnValue value)
+        //{
+        //    var task = this.Request.Content.ReadAsStringAsync();
+        //    task.Wait();
+        //    string rawData = task.Result;
+        //    return value.Value;
+        //}
+       
+            // POST api/values
+        public void Post([FromBody]string value)
         {
-            var task = this.Request.Content.ReadAsStringAsync();
-            task.Wait();
-            string rawData = task.Result;
-            return value.Value;
         }
 
         // PUT api/values/5
@@ -40,8 +46,8 @@ namespace PhoneBookApi.Controllers
         {
         }
     }
-    public class CheckReturnValue
-    {
-        public string Value { get; set; }
-    } 
+    //public class CheckReturnValue
+    //{
+    //    public string Value { get; set; }
+    //} 
 }
