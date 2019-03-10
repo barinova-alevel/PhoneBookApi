@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Contact xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Id>c5c0f9d4-ef6b-4ad1-a2a1-78bee3a6d526</Id>
+  <FirstName>Donalffffd</FirstName>
+  <LastName>Duck</LastName>
+  <PhoneNumbers>
+    <string>55555555</string>
+    <string>79797979</string>
+  </PhoneNumbers>
+  <GroupId>00000000-0000-0000-0000-000000000000</GroupId>
+</Contact>
